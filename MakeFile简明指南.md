@@ -517,7 +517,51 @@ clean:
     rm -r $(BUILD_DIR)/* $(BIN_DIR)/*
 ```
 
+一个更通用的模板
+```make
+# 通用 Makefile 模板
 
+# 1. 编译器及选项
+CC      := gcc             # C 编译器 (可改成 g++)
+CFLAGS  := -Wall -O2       # 编译参数
+LDFLAGS :=                 # 链接参数 (库路径)
+LDLIBS  := -lm             # 依赖的库 (-lpthread, -lrt 等)
+
+# 2. 目录结构
+SRC_DIR := src             # 源码目录
+OBJ_DIR := build           # 目标文件目录
+BIN_DIR := bin             # 可执行文件目录
+
+# 3. 自动收集源文件
+SRCS := $(wildcard $(SRC_DIR)/*.c)
+OBJS := $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))
+TARGET := $(BIN_DIR)/app   # 生成的可执行文件名
+
+# 4. 默认目标
+all: $(TARGET)
+
+# 5. 链接规则
+$(TARGET): $(OBJS) | $(BIN_DIR)
+	$(CC) $(LDFLAGS) -o $@ $^ $(LDLIBS)
+
+# 6. 编译规则
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# 7. 目录生成
+$(OBJ_DIR) $(BIN_DIR):
+	mkdir -p $@
+
+# 8. 清理
+.PHONY: clean run
+clean:
+	rm -rf $(OBJ_DIR) $(BIN_DIR)
+
+# 9. 运行 (可选)
+run: all
+	./$(TARGET)
+
+```
 
 [^1]: 仅作了解
 
