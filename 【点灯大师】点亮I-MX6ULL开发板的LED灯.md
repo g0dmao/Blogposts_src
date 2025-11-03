@@ -37,7 +37,7 @@ categories:
   - [4.2. 格式转换](#42-格式转换)
 - [5. 使用官方SDK包生成镜像文件](#5-使用官方sdk包生成镜像文件)
 - [6. 安装SDK包](#6-安装sdk包)
-  - [6.1. build SDK](#61-build-sdk)
+  - [6.1. （可选）检查可用性](#61-（可选）检查可用性)
   - [6.2. 生成镜像文件](#62-生成镜像文件)
 - [7. 烧录到SD卡](#7-烧录到sd卡)
 - [8. 达成成就【点灯大师】](#8-达成成就点灯大师)
@@ -204,21 +204,33 @@ ROM 中按照固定的地址存放着。
 ./SDK_2.2_MCIM6ULL_RFP_Linux.run
 ```
 
-### 6.1. build SDK
+### 6.1. （可选）检查可用性
 此步所需软件：
 :::success
 - gcc-arm-none-eabi交叉编译套件
 - cmake
 :::
+
 在Linux环境下，
 添加临时环境变量，执行以下命令：
 ```zsh
 export ARMGCC_DIR=/usr
 ```
-进入工程文件**SDK_2.2_MCIM6ULL/boards/evkmcimx6ull/demo_apps/hello_world/armgcc** 运行build_ddr_release.sh脚本
+
+进入工程文件**SDK_2.2_MCIM6ULL/boards/evkmcimx6ull/demo_apps/hello_world/armgcc** ，这是官方的demo，运行build_ddr_release.sh脚本
 ```zsh
 ./build_ddr_release.sh
 ```
+
+进入同文件夹的 `ddr_release` 文件夹，会发现里面有一个sdk20-app.img，这实际上是添加了头文件的可用img文件。
+
+跳转到第7节烧录到sd卡并启动。连接到串口后会板子会发送"hello world"。
+
+#### 2025-10-26补充
+
+>首先感谢我当时写了这篇文章，，，，，查阅起来真是太方便了
+当我指定编译器并运行脚本时提示缺少newlib库，这里推荐使用ARM官方的编译工具链，以避免缺少库的问题。
+附链接：[Arm GNU Toolchain Downloads – Arm Developer](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
 
 ###  6.2. 生成镜像文件
 进入工程文件**SDK_2.2_MCIM6ULL/tools/imgutil/evkmcimx6ull**

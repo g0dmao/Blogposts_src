@@ -6,7 +6,7 @@ tags:
   - ArchLinux
 categories:
   - Linux
-  - ArchLinux
+  - 记录
 abbrlink: 17327
 date: 2025-09-18 20:21:15
 ---
@@ -77,8 +77,7 @@ nano /etc/sudoers
 
 去掉 `# %wheel ALL=(ALL:ALL) ALL` 前的注释
 
-!!! todo "tip"
-    前面带%(如%wheel)则表示这是一个用户组，不带则表示这是一个用户。
+>前面带%(如%wheel)则表示这是一个用户组，不带则表示这是一个用户。
 
 
 ### 3.4. 设定默认用户
@@ -164,8 +163,8 @@ yay -S oh-my-posh-bin
 eval "$(oh-my-posh init zsh --config 'amro')"
 ```
 
-!!! error "bug"
-    建议不要使用类似于 `--config ~/.poshthemes/mytheme.omp.json`的选项，这可能会出现问题。
+
+> 建议不要使用类似于 `--config ~/.poshthemes/mytheme.omp.json`的选项，这可能会出现问题。
 
 
 重新加载：

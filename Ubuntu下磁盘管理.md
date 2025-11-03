@@ -6,7 +6,7 @@ tags:
   - 磁盘管理
 categories:
   - Linux
-  - Ubuntu
+  - 入门
 abbrlink: 30265
 date: 2025-06-12 16:00:30
 ---

@@ -4,5 +4,6 @@
   "newLinkFormat": "shortest",
   "useMarkdownLinks": true,
   "strictLineBreaks": true,
-  "showUnsupportedFiles": false
+  "showUnsupportedFiles": false,
+  "spellcheck": false
 }

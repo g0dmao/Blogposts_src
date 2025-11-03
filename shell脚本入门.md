@@ -5,7 +5,7 @@ tags:
   - Linux
 categories:
   - Linux
-  - Shell
+  - 入门
 abbrlink: 27290
 date: 2025-06-18 16:22:15
 ---

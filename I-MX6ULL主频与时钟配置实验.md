@@ -3,6 +3,11 @@ title: I-MX6ULL主频与时钟配置实验
 abbrlink: 33477
 date: 2025-08-06 21:50:03
 tags:
+  - Linux
+  - 嵌入式
+categories:
+  - Linux
+  - 记录
 ---
 <details>
 

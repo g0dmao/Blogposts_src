@@ -6,7 +6,7 @@ tags:
   - 文件系统
 categories:
   - Linux
-  - Ubuntu
+  - 入门
 abbrlink: 10180
 date: 2025-06-14 17:31:19
 ---

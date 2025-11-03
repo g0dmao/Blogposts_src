@@ -4,7 +4,7 @@ tags:
   - 网页
   - hexo主题
 categories:
-  - web前端
+  - 其他
 abbrlink: 20333
 date: 2025-04-06 15:09:50
 ---

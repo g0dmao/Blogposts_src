@@ -6,7 +6,7 @@ tags:
   - Ubuntu
 categories:
   - Linux
-  - Ubuntu
+  - 入门
 abbrlink: 7417
 date: 2025-06-11 17:02:41
 ---

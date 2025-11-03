@@ -5,7 +5,7 @@ tags:
   - 链接文件
 categories:
   - Linux
-  - Ubuntu
+  - 入门
 abbrlink: 36626
 date: 2025-06-14 21:09:49
 ---
